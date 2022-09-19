@@ -1,9 +1,10 @@
-import './App.css';
+import '~/App.css';
+import Button from './component/Button.js'
 import {Routes, Route, Link} from 'react-router-dom'
 
 function App() {
   return (
-    <h1>TIKTOK</h1>
+    <Button/>
   );
 }
 
