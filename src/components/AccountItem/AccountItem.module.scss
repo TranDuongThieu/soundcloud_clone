@@ -1,0 +1,37 @@
+.wrapper {
+    display: flex;
+    align-items: center;
+    padding: 9px 16px;
+    max-width: 353px;
+    &:hover {
+        background-color: #16182308;
+        cursor: pointer;
+    }
+}
+
+.shape {
+    margin-right: 12px;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.name {
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 500;
+}
+.icon-check {
+    margin-left: 4px;
+    color: rgb(32, 213, 236);
+}
+// .info {
+//     margin-left: 4px;
+// }
+.username {
+    font-size: 14px;
+    color: #16182380;
+}

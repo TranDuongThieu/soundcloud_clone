@@ -2,8 +2,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
 :root {
   --primary: #fe2c55;
-  --default-layout-height:60px;
-  --default-layout-width:1150px;
+  --default-layout-height: 60px;
+  --default-layout-width: 1150px;
+  --text-color: #333;
 }
 
 html {
@@ -21,4 +22,16 @@ body {
   font-size: 1.6rem;
   line-height: 1.5;
   text-rendering: optimizespeed;
+}
+
+button,
+input,
+[tabindex] {
+  outline: none;
+  border: none;
+}
+
+a[href] {
+  color: val(--text-color);
+  text-decoration: none;
 }/*# sourceMappingURL=GlobalStyles.css.map */

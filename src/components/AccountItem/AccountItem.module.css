@@ -1,0 +1,38 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  padding: 9px 16px;
+  max-width: 353px;
+}
+.wrapper:hover {
+  background-color: rgba(22, 24, 35, 0.031372549);
+  cursor: pointer;
+}
+
+.shape {
+  margin-right: 12px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.name {
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 500;
+}
+
+.icon-check {
+  margin-left: 4px;
+  color: rgb(32, 213, 236);
+}
+
+.username {
+  font-size: 14px;
+  color: rgba(22, 24, 35, 0.5019607843);
+}/*# sourceMappingURL=AccountItem.module.css.map */

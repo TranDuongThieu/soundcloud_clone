@@ -1,4 +1,5 @@
 .wrapper {
+  --search-border-radius: 92px;
   width: 100%;
   height: var(--default-layout-height, 60px);
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12);
@@ -9,4 +10,131 @@
 .inner {
   height: 100%;
   width: var(--default-layout-width, 1150px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.search-title {
+  padding: 5px 12px;
+  color: rgba(22, 24, 35, 0.5019607843);
+}
+
+.search {
+  width: 361px;
+  height: 46px;
+  border-radius: var(--search-border-radius);
+  background-color: rgba(22, 24, 35, 0.0588235294);
+  padding-left: 16px;
+  display: flex;
+  position: relative;
+}
+.search input {
+  width: 252px;
+  flex: 1;
+  color: #161823;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  padding: 12px 0px;
+  padding-right: 48px;
+}
+.search .stick {
+  width: 1px;
+  height: 28px;
+  background: rgba(22, 24, 35, 0.12);
+  align-self: center;
+}
+.search:focus-within {
+  border: 1.5px solid #c5c6c9;
+}
+
+.search-result {
+  width: 361px;
+}
+
+.search-btn {
+  width: 52px;
+  height: 100%;
+  border-top-right-radius: var(--search-border-radius);
+  border-bottom-right-radius: var(--search-border-radius);
+}
+.search-btn svg {
+  width: 24px;
+  height: 24px;
+  color: rgba(22, 24, 35, 0.34);
+  padding: 11px 16px 11px 12px;
+}
+.search-btn:hover {
+  background-color: #eaeaeb;
+  cursor: pointer;
+}
+
+.clear-btn,
+.loading-btn {
+  position: absolute;
+  width: 40px;
+  height: 16px;
+  right: 60px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(22, 24, 35, 0.34);
+}
+
+.clear-btn {
+  background-color: #f1f1f2;
+}
+.clear-btn svg {
+  font-size: 14px;
+}
+
+.action {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.update-icon {
+  padding: 0 16px;
+  border: 1px solid rgba(22, 24, 35, 0.12);
+  height: 36px;
+  display: flex;
+  align-items: center;
+}
+.update-icon svg {
+  margin-right: 5px;
+  color: black;
+}
+.update-icon span {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  color: black;
+}
+
+.paperlane-icon,
+.message-icon {
+  margin-left: 16px;
+  padding: 3px;
+}
+.paperlane-icon svg,
+.message-icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.setting-icon {
+  margin-left: 16px;
+}
+.setting-icon svg {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+.setting-icon:hover {
+  cursor: pointer;
 }/*# sourceMappingURL=Header.module.css.map */
