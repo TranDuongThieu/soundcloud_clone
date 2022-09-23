@@ -5,27 +5,37 @@ import {
     faSpinner,
     faPlus,
     faEllipsisVertical,
+    faEarthAsia,
 } from '@fortawesome/free-solid-svg-icons';
-import { faPaperPlane, faMessage } from '@fortawesome/free-regular-svg-icons';
+import { faCircleQuestion, faKeyboard } from '@fortawesome/free-regular-svg-icons';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
 
 import styles from './Header.module.css';
 import images from '~/assets/images';
 import classNames from 'classnames/bind';
-import { useState, useEffect } from 'react';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
 import AccountItem from '~/components/AccountItem';
 import Button from '~/components/Button';
+import Menu from '~/components/PopperMenu';
 
 const cx = classNames.bind(styles);
+const MENU_ITEMS = [
+    {
+        icon: <FontAwesomeIcon icon={faEarthAsia} />,
+        title: 'English',
+    },
+    {
+        icon: <FontAwesomeIcon icon={faCircleQuestion} />,
+        title: 'Feedback and help',
+        top: '/feedback',
+    },
+    {
+        icon: <FontAwesomeIcon icon={faKeyboard} />,
+        title: 'Keyboard shortcuts',
+    },
+];
 function Header() {
-    const [searchResult, setSearchResult] = useState([]);
-    useEffect(() => {
-        setTimeout(() => {
-            setSearchResult([1, 2, 3]);
-        }, 0);
-    }, []);
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
@@ -34,11 +44,11 @@ function Header() {
                 </div>
 
                 <Tippy
-                    visible={searchResult.length > 0}
+                    placement="bottom"
                     render={(attrs) => (
                         <div className={cx('search-result')} tabIndex="-1" {...attrs}>
                             <PopperWrapper>
-                                <h4 className={cx('search-title')}>Tài khoản</h4>
+                                <h4 className={cx('search-title')}>Accounts</h4>
                                 <AccountItem />
                                 <AccountItem />
                                 <AccountItem />
@@ -49,7 +59,7 @@ function Header() {
                     interactive={true}
                 >
                     <div className={cx('search')}>
-                        <input placeholder="Tìm kiếm tài khoản và video" spellCheck={false} />
+                        <input placeholder="Search accounts and videos" spellCheck={false} />
                         <button className={cx('clear-btn')}>
                             <FontAwesomeIcon icon={faCircleXmark} />
                         </button>
@@ -66,7 +76,7 @@ function Header() {
                         <a href="#update-icon">
                             <div className={cx('upload')}>
                                 <FontAwesomeIcon icon={faPlus} />
-                                <span> Tải lên</span>
+                                <span>Upload</span>
                             </div>
                         </a>
                     </div>
@@ -77,12 +87,18 @@ function Header() {
                         <FontAwesomeIcon icon={faMessage} />
                     </div>
                     <div className={cx('avt-icon')}></div> */}
-                    <Button>Đăng nhập</Button>
-                    <Tippy content="setting">
-                        <div className={cx('setting-icon')}>
+                    <Button
+                        primary
+                        href="https://fullstack.edu.vn/learning/reactjs?id=5437f73d-b1ba-46d7-8ceb-85e13f7e447e"
+                        target="_blank"
+                    >
+                        Log in
+                    </Button>
+                    <Menu items={MENU_ITEMS}>
+                        <button className={cx('setting-icon')}>
                             <FontAwesomeIcon icon={faEllipsisVertical} />
-                        </div>
-                    </Tippy>
+                        </button>
+                    </Menu>
                 </div>
             </div>
         </header>

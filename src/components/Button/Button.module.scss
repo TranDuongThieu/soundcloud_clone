@@ -4,8 +4,36 @@
     min-width: 100px;
     padding: 9px 16px;
     border-radius: 4px;
-    border: none;
-    color: rgba(255, 255, 255, 1);
-    background-color: rgba(254, 44, 85, 1);
     margin-left: 16px;
+    display: flex;
+    justify-content: center;
+}
+.primary {
+    background-color: var(--primary);
+    color: var(--white);
+    &:hover {
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.06)), #fe2c55;
+        cursor: pointer;
+    }
+}
+
+.outline {
+    color: var(--primary);
+    border: 1px solid var(--primary);
+    &:hover {
+        background-color: rgba(254, 44, 85, 0.06);
+    }
+}
+.defaul {
+    background-color: white;
+}
+// Button size
+
+.small {
+    min-width: 88px;
+    padding: 4px 8px;
+}
+.large {
+    min-width: 148px;
+    padding: 14px 16px;
 }

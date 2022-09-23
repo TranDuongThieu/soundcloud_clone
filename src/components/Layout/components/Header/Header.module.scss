@@ -12,13 +12,12 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 0 20px;
 }
 
 .search-title {
     padding: 5px 12px;
     color: #16182380;
-}
-.logo {
 }
 
 .search {
@@ -125,12 +124,10 @@
 }
 
 .setting-icon {
-    margin-left: 16px;
-    svg {
-        width: 20px;
-        height: 20px;
-        display: block;
-    }
+    font-size: 2rem;
+    margin-left: 28px;
+    background-color: transparent;
+    padding: 4px 8px;
     &:hover {
         cursor: pointer;
     }

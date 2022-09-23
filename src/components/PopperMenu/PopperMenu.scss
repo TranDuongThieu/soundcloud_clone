@@ -1,0 +1,33 @@
+.menu-item {
+    display: flex;
+    flex-direction: column;
+}
+// .menu-button{
+
+// }
+.wrapper {
+    display: flex;
+    justify-content: flex-start;
+}
+.button-nopadding {
+    font-size: 1.6rem;
+    font-weight: 700;
+    width: 100%;
+    padding: 12px 30px 12px 16px;
+    display: flex;
+    background-color: white;
+    &:hover {
+        background: rgba(22, 24, 35, 0.03);
+        cursor: pointer;
+    }
+}
+.setting-title {
+    margin-left: 5px;
+}
+.setting-icon {
+    display: inline-block;
+    width: 20px;
+}
+.menu-popper {
+    padding-bottom: 8px;
+}
