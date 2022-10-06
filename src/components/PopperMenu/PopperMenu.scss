@@ -2,6 +2,10 @@
     display: flex;
     flex-direction: column;
 }
+
+.content {
+    min-width: 232px;
+}
 // .menu-button{
 
 // }
@@ -11,8 +15,9 @@
 }
 .button-nopadding {
     font-size: 1.6rem;
-    font-weight: 700;
+    font-weight: 600;
     width: 100%;
+    font-family: var(--font-family);
     padding: 12px 30px 12px 16px;
     display: flex;
     background-color: white;
@@ -30,4 +35,43 @@
 }
 .menu-popper {
     padding-bottom: 8px;
+}
+
+.language-header {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    position: relative;
+    height: 50px;
+}
+.menu-body {
+    overflow-y: auto;
+}
+.language-title {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.back-btn {
+    width: 48px;
+    height: 26px;
+    position: relative;
+    background-color: white;
+    svg {
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    &:hover {
+        cursor: pointer;
+    }
+}
+.log_out {
+    border-top: 1px solid rgba(22, 24, 35, 0.12);
 }

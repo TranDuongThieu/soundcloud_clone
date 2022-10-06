@@ -2,11 +2,12 @@
     font-size: 1.6rem;
     font-weight: 700;
     min-width: 100px;
-    padding: 9px 16px;
+    height: 36px;
     border-radius: 4px;
     margin-left: 16px;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 .primary {
     background-color: var(--primary);
@@ -36,4 +37,7 @@
 .large {
     min-width: 148px;
     padding: 14px 16px;
+}
+.log_out {
+    border-top: 1px solid rgba(22, 24, 35, 0.12);
 }

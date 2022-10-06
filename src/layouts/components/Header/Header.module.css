@@ -1,0 +1,105 @@
+.wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  --search-border-radius: 92px;
+  width: 100%;
+  height: var(--default-layout-height);
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12);
+  display: flex;
+  justify-content: center;
+  background-color: var(--white);
+  z-index: 10;
+}
+
+.inner {
+  height: 100%;
+  width: var(--default-layout-width, 1150px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.logo {
+  display: flex;
+}
+
+.action {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.update-icon {
+  padding: 0 16px;
+  border: 1px solid rgba(22, 24, 35, 0.12);
+  height: 36px;
+  display: flex;
+  align-items: center;
+}
+.update-icon svg {
+  margin-right: 5px;
+  color: black;
+}
+.update-icon span {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  color: black;
+}
+.update-icon:hover {
+  background-color: rgba(22, 24, 35, 0.03);
+}
+
+.setting-icon {
+  font-size: 2rem;
+  margin-left: 28px;
+  background-color: transparent;
+  padding: 4px 8px;
+}
+.setting-icon:hover {
+  cursor: pointer;
+}
+
+.current-user {
+  display: flex;
+}
+.current-user svg:hover {
+  cursor: pointer;
+}
+.current-user .user-message,
+.current-user .user-inbox {
+  font-size: 23px;
+  padding: 3px 3px 0 3px;
+  margin-left: 16px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.current-user .inbox-count {
+  color: white;
+  font-size: 12px;
+  padding: 0px 7px;
+  border-radius: 50%;
+  background-color: red;
+  position: absolute;
+  top: -3px;
+  right: -7px;
+}
+
+.user-avatar {
+  display: flex;
+  align-items: center;
+  padding: 3px 3px 0 3px;
+  margin-left: 16px;
+}
+.user-avatar img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+.user-avatar:hover {
+  cursor: pointer;
+}/*# sourceMappingURL=Header.module.css.map */
