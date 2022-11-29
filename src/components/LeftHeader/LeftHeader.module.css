@@ -1,0 +1,18 @@
+.header-item-left {
+  color: #ccc;
+  display: block;
+  height: 46px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  width: 104px;
+  border-right: 1px solid #111;
+}
+.header-item-left:hover {
+  color: white;
+}
+.header-item-left.active {
+  background-color: #000000;
+  color: white;
+}/*# sourceMappingURL=LeftHeader.module.css.map */

@@ -1,0 +1,11 @@
+.container {
+  margin: 0px auto;
+  padding: 0 30px;
+  padding-top: 46px;
+  width: 1245px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+}/*# sourceMappingURL=NoSidebar.module.css.map */

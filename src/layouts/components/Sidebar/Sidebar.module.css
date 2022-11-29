@@ -1,0 +1,71 @@
+.wrapper {
+  background-color: white;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 360px;
+  padding-top: 60px;
+  padding-right: 30px;
+  display: flex;
+  justify-content: center;
+  flex: 1;
+  z-index: 10;
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+  padding: 0 30px;
+  padding-right: 0;
+}
+
+.go-mobile {
+  width: 300px;
+  border-bottom: 1px solid #f2f2f2;
+  font-size: 14px;
+}
+.go-mobile:hover .go-mobile-header svg {
+  visibility: visible;
+}
+.go-mobile .go-mobile-header {
+  border-bottom: 1px solid #f2f2f2;
+  height: 30px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.go-mobile .go-mobile-header span {
+  opacity: 0.7;
+}
+.go-mobile .go-mobile-header svg {
+  visibility: hidden;
+  color: #999;
+  font-size: 17px;
+}
+.go-mobile .go-mobile-header svg:hover {
+  cursor: pointer;
+}
+.go-mobile .go-mobile-header svg:active .go-mobile {
+  display: none;
+}
+.go-mobile .go-mobile-content {
+  margin: 20px 0;
+}
+.go-mobile .go-mobile-content img {
+  margin-right: 20px;
+}
+
+.footer span {
+  font-size: 12.5px;
+  opacity: 0.5;
+  line-height: 1 !important;
+}
+.footer span:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+.footer .footer-language span:first-child {
+  opacity: 1;
+  color: blue;
+}/*# sourceMappingURL=Sidebar.module.css.map */

@@ -1,103 +1,161 @@
 .wrapper {
-    position: fixed;
-    top: 0;
-    left: 0;
-    --search-border-radius: 92px;
+    font-family: Interstate, Lucida Grande, Arial, sans-serif;
     width: 100%;
-    height: var(--default-layout-height);
-    box-shadow: 0px 1px 1px rgb(0 0 0 / 12%);
+    font-weight: 100;
+    font-size: 14px;
+    line-height: 1.5;
+    background: #333;
+    height: 46px;
+    position: fixed;
+    z-index: 99;
     display: flex;
     justify-content: center;
-    background-color: var(--white);
-    z-index: 10;
 }
-.inner {
-    height: 100%;
-    width: var(--default-layout-width, 1150px);
+a {
+    text-decoration: none;
+    color: white;
+    padding: 12px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 0 20px;
+    &:hover {
+        color: white;
+    }
 }
-.logo {
-    display: flex;
-}
-.action {
+.header-content {
+    height: 100%;
+    padding: 0;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    width: 1204px;
 }
 
-.update-icon {
-    padding: 0 16px;
-    border: 1px solid rgba(22, 24, 35, 0.12);
-    height: 36px;
-    display: flex;
-    align-items: center;
-    svg {
-        margin-right: 5px;
-        color: black;
+.header-logo {
+    display: block;
+    height: 100%;
+    border-right: 1px solid #111;
+    .logo {
+        width: 48px;
+        height: 100%;
+        background-image: url(https://a-v2.sndcdn.com/assets/images/peace-cloud-28ad0963.svg);
+        background-repeat: no-repeat;
     }
-    span {
-        font-weight: 600;
-        font-size: 16px;
-        line-height: 24px;
-        color: black;
-    }
-    &:hover {
-        background-color: rgba(22, 24, 35, 0.03);
+    &.active {
+        background-color: #000000;
+        color: white;
     }
 }
 
-.setting-icon {
-    font-size: 2rem;
-    margin-left: 28px;
-    background-color: transparent;
-    padding: 4px 8px;
-    &:hover {
-        cursor: pointer;
-    }
-}
-.current-user {
-    display: flex;
+.header-search {
+    padding: 9px 10px 8px 10px;
+    width: 440px;
 
-    svg {
-        &:hover {
-            cursor: pointer;
+    form {
+        display: flex;
+        background: #e5e5e5;
+        height: 28px;
+        border-radius: 4px;
+    }
+    input {
+        background: #e5e5e5;
+        border: 0;
+        outline: 0;
+        padding: 5px 7px;
+        height: 100%;
+        width: 100%;
+        border-radius: 4px;
+        &:focus {
+            background-color: white;
+        }
+        &:focus {
+            .search-icon {
+                background-color: white;
+            }
         }
     }
-    .user-message,
-    .user-inbox {
-        font-size: 23px;
-        padding: 3px 3px 0 3px;
-        margin-left: 16px;
-        display: flex;
-        align-items: center;
-        position: relative;
-    }
-    .inbox-count {
-        color: white;
-        font-size: 12px;
-        padding: 0px 7px;
-        border-radius: 50%;
-        background-color: red;
-        position: absolute;
-        top: -3px;
-        right: -7px;
+    .search-icon {
+        border-radius: 4px;
+        background: #e5e5e5;
+        margin: 0 10px;
     }
 }
-.user-avatar {
+.header-item-right {
+    height: 100%;
+    color: #ccc;
+    a {
+        &:hover {
+            color: white;
+        }
+    }
+    &.active {
+        background-color: #000000;
+        color: white;
+    }
+}
+
+.red-color {
+    a {
+        width: 105px;
+        color: #f50;
+    }
+    &:hover a {
+        color: #f50;
+    }
+}
+.header-info {
     display: flex;
     align-items: center;
+    width: 100%;
+    height: 100%;
     img {
-        width: 32px;
-        height: 32px;
+        height: 28px;
+        width: 28px;
         border-radius: 50%;
+        margin-right: 8px;
     }
-    padding: 3px 3px 0 3px;
-    margin-left: 16px;
+    .name {
+        padding-right: 8px;
+        color: #ccc;
+    }
+    .info-icon {
+        color: #ccc;
+        font-size: 12px;
+    }
     &:hover {
         cursor: pointer;
     }
+    &:hover .info-icon {
+        color: white;
+    }
+    &:hover span {
+        color: white;
+    }
+}
+.add-padding {
+    padding: 0px 12px;
+}
+.right-icon {
+    color: #ccc;
+    padding: 12px 15px;
+    font-size: 16px;
+    &:hover {
+        color: white;
+        cursor: pointer;
+    }
+    height: 100%;
+    &.active {
+        background-color: #000000;
+        color: white;
+    }
+}
+.size-medium {
+    font-size: 30px !important;
+    padding: 0 12px;
+}
+.info {
+    display: flex;
+    align-items: center;
+}
+.black {
+    background-color: black;
 }

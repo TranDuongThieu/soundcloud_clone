@@ -1,19 +1,28 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Fragment } from 'react';
 import { publicRoutes } from '~/routes';
-import { DefaultLayout } from '~/layouts';
+import { Fragment } from 'react';
+import DefaultLayouts from '~/layouts/DefaultLayouts/DefaultLayouts';
+import Songs from '~/pages/Home/SongInfo';
+import { useState } from 'react';
 
 function App() {
+    const [song, setSong] = useState(Songs[0]);
+    const [listSong, setListSong] = useState(Songs);
+    const [indexCurrentSong, setIndexCurrentSong] = useState(0);
+    const handleSetSong = (song, Songs, indexCurrentSong) => {
+        setSong(song);
+        setListSong(Songs);
+        setIndexCurrentSong(indexCurrentSong);
+    };
     return (
         <Router>
             <div className="App">
                 <Routes>
                     {publicRoutes.map((route, index) => {
                         const Page = route.component;
-                        let Layout = DefaultLayout;
-                        if (route.layout) {
-                            Layout = route.layout;
-                        } else if (route.layout === null) {
+                        let Layout = DefaultLayouts;
+                        if (route.layout) Layout = route.layout;
+                        else if (route.layout === null) {
                             Layout = Fragment;
                         }
                         return (
@@ -21,8 +30,13 @@ function App() {
                                 key={index}
                                 path={route.path}
                                 element={
-                                    <Layout>
-                                        <Page />
+                                    <Layout
+                                        song={song}
+                                        handleSetSong={handleSetSong}
+                                        listSong={listSong}
+                                        indexCurrentSong={indexCurrentSong}
+                                    >
+                                        <Page song={song} handleSetSong={handleSetSong} />
                                     </Layout>
                                 }
                             />

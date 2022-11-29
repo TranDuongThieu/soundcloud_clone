@@ -1,0 +1,134 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+.header {
+    border-bottom: 1px solid #f2f2f2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    height: 30px;
+
+    &:hover {
+        cursor: pointer;
+    }
+    &:hover .button {
+        color: black;
+        opacity: 1;
+    }
+
+    svg {
+        opacity: 0.7;
+        margin-right: 5px;
+    }
+    .title,
+    .button {
+        opacity: 0.7;
+    }
+    .title {
+        display: flex;
+        align-items: center;
+    }
+}
+// .content {
+//     margin-bottom: 10px;
+// }
+.sidebar-item {
+    margin: 15px 0;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    button {
+        padding: 2px 9px;
+        position: absolute;
+        bottom: 10px;
+        right: 0;
+        background-color: white;
+        border: 1px solid #e5e5e5;
+        border-radius: 3px;
+
+        &:hover {
+            cursor: pointer;
+            border-color: #ccc;
+        }
+        svg {
+            margin-right: 3px;
+            opacity: 0.7;
+        }
+        span {
+            font-size: 12px;
+            opacity: 0.7;
+        }
+    }
+}
+.sidebar-item-left {
+    display: flex;
+    align-items: center;
+    img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-right: 10px;
+        background-size: cover;
+    }
+}
+.info {
+    margin-top: 3px;
+    span {
+        margin-bottom: 3px;
+        opacity: 0.7;
+        &:hover {
+            cursor: pointer;
+            opacity: 1;
+        }
+    }
+}
+.info-details {
+    display: flex;
+
+    span {
+        display: flex;
+        margin-top: 5px;
+        margin-right: 10px;
+        font-size: 12px;
+        opacity: 0.7;
+        &:hover {
+            cursor: pointer;
+            opacity: 1;
+        }
+        svg {
+            margin-right: 3px;
+        }
+    }
+}
+
+.sidebar-item-left-img {
+    background-size: cover;
+    border-radius: 0 !important;
+}
+.sidebar-item-left-info {
+    span {
+        font-size: 14px;
+        opacity: 0.7;
+
+        margin-top: 0;
+        &:hover {
+            cursor: pointer;
+            opacity: 1;
+        }
+    }
+    .info-details {
+        span {
+            font-size: 12px;
+            opacity: 0.7;
+            &:hover {
+                cursor: pointer;
+                opacity: 1;
+            }
+        }
+    }
+}

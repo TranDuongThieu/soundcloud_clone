@@ -1,0 +1,25 @@
+.menu-item {
+  display: flex;
+  background-color: #fff;
+  align-items: center;
+  font-family: Interstate, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Garuda, Verdana, Tahoma, sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  padding: 8px 10px;
+}
+.menu-item:hover {
+  background-color: #f2f2f2;
+  cursor: pointer;
+}
+
+.menu-icon {
+  margin-right: 10px;
+}
+
+.menu-title {
+  margin-right: 15px;
+}
+
+.border_bottom {
+  border-bottom: 0.8px solid rgba(204, 204, 204, 0.3);
+}/*# sourceMappingURL=MenuItems.module.css.map */

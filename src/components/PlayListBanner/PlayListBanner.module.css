@@ -1,0 +1,53 @@
+.playlist-container {
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+.playlist-header {
+  margin-bottom: 10px;
+}
+
+.playlist-content {
+  padding: 20px;
+  display: flex;
+}
+.playlist-content img {
+  width: 180px;
+  height: 180px;
+}
+
+.background1 {
+  background: linear-gradient(135deg, rgb(132, 132, 100) 0%, rgb(64, 67, 45) 100%);
+}
+
+.playlist-track {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid hsla(0deg, 0%, 100%, 0.1);
+  padding: 0 10px;
+}
+.playlist-track:hover {
+  cursor: pointer;
+  background: hsla(0deg, 0%, 100%, 0.1);
+  border-bottom: 1px solid transparent;
+  outline: 0;
+}
+.playlist-track span {
+  font-size: 14px;
+  font-weight: 100;
+}
+
+.playlist-track_info {
+  margin-left: 10px;
+  width: 100%;
+  height: 100%;
+  color: white;
+  justify-content: space-between;
+  height: 180px;
+  overflow-y: auto;
+}
+
+.playlist-track_info-right svg {
+  height: 12px;
+}/*# sourceMappingURL=PlayListBanner.module.css.map */
