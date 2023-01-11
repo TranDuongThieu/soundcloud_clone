@@ -2,8 +2,10 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { publicRoutes } from '~/routes';
 import { Fragment } from 'react';
 import DefaultLayouts from '~/layouts/DefaultLayouts/DefaultLayouts';
-import Songs from '~/pages/Home/SongInfo';
+import Songs from '~/components/Songs/SongInfo';
 import { useState } from 'react';
+import { memo } from 'react';
+import PlayControls from './layouts/components/PlayControls/PlayControls';
 
 function App() {
     const [song, setSong] = useState(Songs[0]);
@@ -44,8 +46,14 @@ function App() {
                     })}
                 </Routes>
             </div>
+            <PlayControls
+                track={song}
+                handleSetSong={handleSetSong}
+                listSong={listSong}
+                indexCurrentSong={indexCurrentSong}
+            />
         </Router>
     );
 }
 
-export default App;
+export default memo(App, () => false);

@@ -3,17 +3,20 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames/bind';
 import { CommentIcon, HeartIcon, PlayIcon, RepostIcon, TrackIcon, UsersIcon } from '../Icons/Icons';
 import styles from './SidebarItem.module.css';
-
+import LIBRARY_TRACKS from '../Songs/LibraryTracks';
 const cx = classNames.bind(styles);
-function SideBarItem({ item, children, artist }) {
-    let randomIndex = Math.floor(Math.random() * (children.length - 4));
 
+const SideBarItem = ({ item, children, artist }) => {
+    let randomIndex = 0;
+    const likesLength = LIBRARY_TRACKS[1].tracks.filter((song) => song !== 'none').length;
     return (
         <div className={cx('wrapper')}>
             <div className={cx('header')}>
                 <div className={cx('title')}>
                     {item.title.icon}
-                    <span className={cx('title-span')}>{item.title.content}</span>
+                    <span className={cx('title-span')}>
+                        {item.title.content === 'likes' ? likesLength + ' likes' : item.title.content}
+                    </span>
                 </div>
                 <div className={cx('button')}>
                     {item.button.icon}
@@ -85,6 +88,6 @@ function SideBarItem({ item, children, artist }) {
             </div>
         </div>
     );
-}
+};
 
 export default SideBarItem;

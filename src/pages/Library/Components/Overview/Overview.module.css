@@ -1,0 +1,25 @@
+.content-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.header {
+  font-size: 18px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-right: 20px;
+}
+
+.settings {
+  min-width: 31px;
+  border: 1px solid #f50;
+  cursor: pointer;
+  color: #f50;
+  text-align: left;
+  text-overflow: ellipsis;
+}/*# sourceMappingURL=Overview.module.css.map */

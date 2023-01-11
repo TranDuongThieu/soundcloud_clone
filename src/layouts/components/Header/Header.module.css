@@ -91,6 +91,22 @@ a:hover {
   color: white;
 }
 
+.header-item-right-button {
+  color: #ccc;
+  padding: 12px 15px;
+  display: flex;
+  height: 100%;
+  background-color: #333;
+  align-items: center;
+}
+.header-item-right-button svg {
+  font-size: 14px;
+}
+.header-item-right-button:hover {
+  color: white;
+  cursor: pointer;
+}
+
 .red-color a {
   width: 105px;
   color: #f50;

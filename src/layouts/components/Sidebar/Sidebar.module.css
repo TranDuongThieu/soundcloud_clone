@@ -11,6 +11,8 @@
   justify-content: center;
   flex: 1;
   z-index: 10;
+  margin-bottom: 30px;
+  border-left: 1px solid #f2f2f2;
 }
 
 .content {

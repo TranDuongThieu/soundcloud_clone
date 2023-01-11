@@ -1,5 +1,41 @@
 const Songs = [
     {
+        name: 'anh không buồn như em nghĩ',
+        artist: 'kis',
+        img: 'https://i.ytimg.com/vi/f0931LSBGfA/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCmw8T9z-bNEfa2PdRMqlv9dm-OCg',
+        audio: '/asset/audio/anhkhongbuonnhuemnghi.mp3',
+        plays: '1.6M',
+        hearts: '371K',
+        reposts: '308',
+        comments: '192',
+        uploader: 'kis',
+        isHeart: true,
+    },
+    {
+        name: 'biet iu 1 nguoi',
+        artist: 'Winno',
+        img: 'https://i.ytimg.com/vi/TWNiSb-cqRw/hq720.jpg?sqp=-oaymwE2CNAFEJQDSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARhlIGUoZTAP&rs=AOn4CLD_xiFpwcN5PlD0HJ-vGqTLNYlhcQ',
+        audio: '/asset/audio/bietiu1nguoi.mp3',
+        plays: '1.6M',
+        hearts: '371K',
+        reposts: '308',
+        comments: '192',
+        uploader: 'Winno Official',
+        isHeart: false,
+    },
+    {
+        name: 'Thói Quen',
+        artist: 'Bray',
+        img: 'https://i.ytimg.com/vi/9UDhm4x1n1E/hq720.jpg?sqp=-oaymwE2CNAFEJQDSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARhlIFcoPTAP&rs=AOn4CLCopglv7VNJLjDQ7nccZ-kWDWuMDQ',
+        audio: '/asset/audio/thoiquen.mp3',
+        plays: '1.6M',
+        hearts: '371K',
+        reposts: '308',
+        comments: '192',
+        uploader: 'Brayniacs',
+        isHeart: false,
+    },
+    {
         name: 'Night City',
         artist: 'Tobie',
         img: 'https://i1.sndcdn.com/artworks-MCj2k4p3kj8vmoDk-hedYLQ-t500x500.jpg',
@@ -9,6 +45,7 @@ const Songs = [
         reposts: '308',
         comments: '192',
         uploader: 'Tobie ft. hnhngan',
+        isHeart: true,
     },
     {
         name: 'Anh Biết',
@@ -20,6 +57,7 @@ const Songs = [
         reposts: '1,624',
         comments: '1,151',
         uploader: 'D.Blue',
+        isHeart: true,
     },
     {
         name: 'Anh Đâu Đấy',
@@ -31,6 +69,7 @@ const Songs = [
         reposts: '381',
         comments: '213',
         uploader: 'KunN',
+        isHeart: true,
     },
     {
         name: 'Bước Qua Mùa Cô Đơn',
@@ -42,6 +81,7 @@ const Songs = [
         reposts: '231',
         comments: '153',
         uploader: 'Vũ',
+        isHeart: false,
     },
     {
         name: 'Cliché',
@@ -53,6 +93,7 @@ const Songs = [
         reposts: '308',
         comments: '192',
         uploader: 'mxmtoon',
+        isHeart: true,
     },
     {
         name: 'Có Em',
@@ -64,6 +105,7 @@ const Songs = [
         reposts: '545',
         comments: '379',
         uploader: 'DuckDaz.',
+        isHeart: false,
     },
     {
         name: 'Crush 2',
@@ -75,6 +117,7 @@ const Songs = [
         reposts: '724',
         comments: '351',
         uploader: 'W/n',
+        isHeart: false,
     },
     {
         name: 'Đêm Trong Veo',
@@ -86,6 +129,7 @@ const Songs = [
         reposts: '25',
         comments: '8',
         uploader: 'Taruss',
+        isHeart: false,
     },
     {
         name: 'Em',
@@ -97,6 +141,7 @@ const Songs = [
         reposts: '863',
         comments: '113',
         uploader: 'checkurplayers',
+        isHeart: false,
     },
     {
         name: 'Em Là Nhất',
@@ -108,6 +153,7 @@ const Songs = [
         reposts: '1,624',
         comments: '1,151',
         uploader: 'kis',
+        isHeart: false,
     },
     {
         name: 'Flexin trên CircleK ',
@@ -119,6 +165,7 @@ const Songs = [
         reposts: '1,259',
         comments: '909',
         uploader: 'Rap Nhà Làm',
+        isHeart: false,
     },
     {
         name: 'Forget Me Now',
@@ -130,6 +177,7 @@ const Songs = [
         reposts: '1,624',
         comments: '1,151',
         uploader: 'fishy',
+        isHeart: false,
     },
     {
         name: 'Ghé Qua',
@@ -141,6 +189,7 @@ const Songs = [
         reposts: '25',
         comments: '8',
         uploader: 'Dick - Bạn Có Tài Mà',
+        isHeart: false,
     },
     {
         name: 'Không Phải Lời Tỏ Tình',
@@ -152,6 +201,7 @@ const Songs = [
         reposts: '231',
         comments: '153',
         uploader: 'iKaj',
+        isHeart: false,
     },
     {
         name: 'Lời Tạm Biệt Chưa Nói',
@@ -163,6 +213,7 @@ const Songs = [
         reposts: '25',
         comments: '8',
         uploader: 'THH',
+        isHeart: false,
     },
     {
         name: 'Lời Yêu Ngây Dại',
@@ -174,6 +225,7 @@ const Songs = [
         reposts: '231',
         comments: '153',
         uploader: 'KHA',
+        isHeart: false,
     },
     {
         name: 'Mascara',
@@ -185,6 +237,7 @@ const Songs = [
         reposts: '231',
         comments: '153',
         uploader: 'Shaun',
+        isHeart: false,
     },
     {
         name: 'Nghe Em',
@@ -196,6 +249,7 @@ const Songs = [
         reposts: '231',
         comments: '153',
         uploader: 'dungbunnua',
+        isHeart: false,
     },
     {
         name: 'Ngừng Mơ',
@@ -207,6 +261,7 @@ const Songs = [
         reposts: '231',
         comments: '153',
         uploader: 'nhn',
+        isHeart: false,
     },
     {
         name: 'Ngủ Sớm Đi Em',
@@ -218,6 +273,7 @@ const Songs = [
         reposts: '231',
         comments: '153',
         uploader: 'DucMinh',
+        isHeart: false,
     },
     {
         name: 'Nhật Thực',
@@ -229,6 +285,7 @@ const Songs = [
         reposts: '231',
         comments: '153',
         uploader: 'DFoxie37 aka Cáo',
+        isHeart: false,
     },
     {
         name: 'Oishi',
@@ -240,6 +297,7 @@ const Songs = [
         reposts: '231',
         comments: '153',
         uploader: 'HIEUTHUHAI',
+        isHeart: false,
     },
     {
         name: 'okeokeoke',
@@ -251,6 +309,7 @@ const Songs = [
         reposts: '231',
         comments: '153',
         uploader: 'Muwa',
+        isHeart: false,
     },
     {
         name: 'Simple Love',
@@ -262,6 +321,7 @@ const Songs = [
         reposts: '231',
         comments: '153',
         uploader: 'W/n',
+        isHeart: false,
     },
     {
         name: 'Sống Cho Hết Đời Thanh Xuân',
@@ -273,6 +333,7 @@ const Songs = [
         reposts: '231',
         comments: '153',
         uploader: 'BCTM',
+        isHeart: false,
     },
     {
         name: 'Tình Ca Tình Ta',
@@ -284,6 +345,7 @@ const Songs = [
         reposts: '231',
         comments: '153',
         uploader: 'kis',
+        isHeart: false,
     },
     {
         name: 'Yêu Lại Chút Thôi',
@@ -295,6 +357,8 @@ const Songs = [
         reposts: '231',
         comments: '153',
         uploader: 'Clow',
+        isHeart: false,
     },
 ];
+Songs.map((song, index) => (song.id = index));
 export default Songs;

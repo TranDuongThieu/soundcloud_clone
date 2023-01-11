@@ -6,7 +6,7 @@ import NoSidebar from '~/layouts/components/NoSidebar';
 const publicRoutes = [
     { path: '/', component: Home },
     { path: '/Feed', component: Feed, layout: NoSidebar },
-    { path: '/Library', component: Library, layout: NoSidebar },
+    { path: '/you', component: Library, layout: NoSidebar },
     { path: '/Upload', component: Upload, layout: NoSidebar },
     { path: '/trynextpro', component: Home },
     { path: '/profile', component: Home },

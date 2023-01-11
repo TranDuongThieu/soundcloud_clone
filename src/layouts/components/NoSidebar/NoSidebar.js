@@ -1,15 +1,17 @@
 import Header from '../Header/Header';
 import styles from './NoSidebar.module.css';
 import classNames from 'classnames/bind';
+import PlayControls from '../PlayControls/PlayControls';
 
 const cx = classNames.bind(styles);
-function NoSidebar({ children }) {
+function NoSidebar({ song, handleSetSong, listSong, indexCurrentSong, children }) {
+    const Page = () => children;
     return (
-        <div>
-            <div className={cx('wrapper')}>
-                <Header />
-                <div className={cx('container')}>
-                    <div className={cx('content')}>{children}</div>
+        <div className={cx('wrapper')}>
+            <Header />
+            <div className={cx('container')}>
+                <div className={cx('content')}>
+                    <Page />
                 </div>
             </div>
         </div>

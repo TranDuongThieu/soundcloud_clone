@@ -9,13 +9,14 @@ import {
     faShuffle,
     faUserPlus,
     faVolumeHigh,
+    faVolumeLow,
+    faVolumeMute,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames/bind';
 import styles from './PlayControls.module.css';
 import React, { useState, useEffect, useRef } from 'react';
 import TippyHeadless from '@tippyjs/react/headless';
-import Volume from './Volume';
 const cx = classNames.bind(styles);
 function PlayControls({ track, handleSetSong, listSong, indexCurrentSong }) {
     const audioRef = useRef();
@@ -23,10 +24,11 @@ function PlayControls({ track, handleSetSong, listSong, indexCurrentSong }) {
     const [currentTime, setCurrentTime] = useState(0);
     const [duration, setDuration] = useState(1);
     const [progress, setProgress] = useState(0);
-    const [volume, setVolume] = useState(100);
+    const [volume, setVolume] = useState(50);
     const [isShuffle, setIsShuffle] = useState(false);
     const [isRepeat, setIsRepeat] = useState(false);
     useEffect(() => {
+        if (!play) if (audioRef.current) audioRef.current.play();
         if (play) {
             setInterval(() => {
                 const _currentTime = audioRef?.current?.currentTime;
@@ -39,8 +41,12 @@ function PlayControls({ track, handleSetSong, listSong, indexCurrentSong }) {
             }, 500);
         }
         if (currentTime === duration) {
-            handleSetNextSong();
+            if (isRepeat) {
+                setCurrentTime(0);
+                audioRef.current.play();
+            } else handleSetNextSong();
         }
+
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [play, volume, currentTime]);
     const handleChange = (e) => {
@@ -65,15 +71,14 @@ function PlayControls({ track, handleSetSong, listSong, indexCurrentSong }) {
     const handleShuffle = () => {
         setIsShuffle(!isShuffle);
         if (isShuffle) {
-            document.querySelector('.shuffle').style.color = '#f50';
-        } else document.querySelector('.shuffle').style.color = '#333';
-        console.log(isShuffle);
+            document.querySelector('.shuffle').style.color = '#333';
+        } else document.querySelector('.shuffle').style.color = '#f50';
     };
     const handleRepeat = () => {
         setIsRepeat(!isRepeat);
         if (isRepeat) {
-            document.querySelector('.repeat').style.color = '#f50';
-        } else document.querySelector('.repeat').style.color = '#333';
+            document.querySelector('.repeat').style.color = '#333';
+        } else document.querySelector('.repeat').style.color = '#f50';
     };
 
     let trackInfo = track.name + ' - ' + track.artist;
@@ -92,8 +97,6 @@ function PlayControls({ track, handleSetSong, listSong, indexCurrentSong }) {
     const handleSetNextSong = () => {
         let index;
         index = indexCurrentSong;
-
-        index = Math.floor(Math.random() * 27);
         if (index + 1 > listSong.length - 1) index = 0;
         else index = index + 1;
         handleSetSong(listSong[index], listSong, index);
@@ -102,6 +105,16 @@ function PlayControls({ track, handleSetSong, listSong, indexCurrentSong }) {
             audioRef.current.play();
         }, 200);
     };
+    const handleSetVolume = (e) => {
+        setVolume(e.target.value);
+        audioRef.current.volume = e.target.value;
+    };
+    function VolumeButton() {
+        if (volume >= 0.5) return <FontAwesomeIcon className={cx('set-icon-size')} icon={faVolumeHigh} />;
+        if (volume < 0.5 && volume > 0) return <FontAwesomeIcon className={cx('set-icon-size')} icon={faVolumeLow} />;
+        if (volume === 0) return <FontAwesomeIcon className={cx('set-icon-size')} icon={faVolumeMute} />;
+    }
+
     return (
         <div>
             <div className={cx('play-controls')}>
@@ -150,23 +163,34 @@ function PlayControls({ track, handleSetSong, listSong, indexCurrentSong }) {
                         </div>
                         <div className={cx('volume')}>
                             <TippyHeadless
-                                trigger="click"
                                 appendTo={document.body}
+                                interactive="true"
+                                offset={[-5, 58]}
+                                trigger="mouseenter"
+                                delay={[0, 0]}
                                 render={(attrs) => (
                                     <div className="box" tabIndex="-1" {...attrs}>
-                                        <div>
-                                            <Volume />
+                                        <div className={cx('volume-wrapper')}>
+                                            <div className={cx('volume-trangle')}></div>
+                                            <div className={cx('volume-container')}>
+                                                <input
+                                                    type="range"
+                                                    min="0"
+                                                    max="1"
+                                                    step="0.01"
+                                                    value={volume}
+                                                    onChange={(e) => handleSetVolume(e)}
+                                                    className={cx('volume-range')}
+                                                />
+                                            </div>
                                         </div>
                                     </div>
                                 )}
-                                interactive="true"
-                                delay={[200, 200]}
-                                offset={[0, 67]}
                             >
-                                <FontAwesomeIcon className={cx('set-icon-size')} icon={faVolumeHigh} />
+                                <div className={cx('volume-button')}>
+                                    <VolumeButton />
+                                </div>
                             </TippyHeadless>
-                            {/* <FontAwesomeIcon className={cx('set-icon-size')} icon={faVolumeLow} />
-                            <FontAwesomeIcon className={cx('set-icon-size')} icon={faVolumeMute} /> */}
                         </div>
                     </div>
                     <div className={cx('right-container')}>
@@ -180,11 +204,13 @@ function PlayControls({ track, handleSetSong, listSong, indexCurrentSong }) {
                         <div className={cx('icon')}>
                             <FontAwesomeIcon
                                 className={cx('set-icon-size')}
-                                onClick={(e) =>
-                                    e.target.style.color === 'red'
+                                onClick={(e) => {
+                                    track.isHeart = !track.isHeart;
+                                    return e.target.style.color === 'red'
                                         ? (e.target.style.color = 'black')
-                                        : (e.target.style.color = 'red')
-                                }
+                                        : (e.target.style.color = 'red');
+                                }}
+                                color={track.isHeart ? 'red' : 'black'}
                                 icon={faHeart}
                             />
                             <FontAwesomeIcon

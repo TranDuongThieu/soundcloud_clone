@@ -1,11 +1,17 @@
 .container {
   margin: 0px auto;
-  padding: 0 30px;
   padding-top: 46px;
-  width: 1245px;
-  display: flex;
-  flex-direction: row;
+  margin-bottom: 50px;
+  width: 1204px;
   justify-content: space-between;
   align-items: center;
   background: white;
+  position: relative;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.content {
+  height: auto;
 }/*# sourceMappingURL=NoSidebar.module.css.map */

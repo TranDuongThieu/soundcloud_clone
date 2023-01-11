@@ -112,7 +112,7 @@ const LEFT_HEADER = [
         title: 'Feed',
         to: '/feed',
     },
-    { title: 'Library', to: '/library' },
+    { title: 'Library', to: '/you' },
 ];
 function Header() {
     const [searchValue, setSearchValue] = useState('');
@@ -142,7 +142,9 @@ function Header() {
                     </form>
                 </div>
                 <div className={cx('header-item-right', 'red-color')}>
-                    <NavLink to="/trynextpro">Try Next Pro</NavLink>
+                    <a href="https://checkout.soundcloud.com/artist?cpv=r" target="_blank" rel="noreferrer">
+                        Try Next Pro
+                    </a>
                 </div>
                 <div>
                     <NavLink className={(nav) => cx('header-item-right', { active: nav.isActive })} to="/upload">
@@ -152,14 +154,14 @@ function Header() {
                 <TippyHeadless
                     appendTo={document.body}
                     offset={[0, 0]}
+                    placement="bottom-start"
+                    trigger="click"
+                    interactive="true"
                     render={(attrs) => (
                         <div className="box" tabIndex="-1" {...attrs}>
                             <PopperWrapper data={PROFILE_MENU} />
                         </div>
                     )}
-                    placement="bottom-start"
-                    trigger="click"
-                    interactive="true"
                 >
                     <div
                         className={cx('header-item-right', 'add-padding', black)}
@@ -175,25 +177,25 @@ function Header() {
                     </div>
                 </TippyHeadless>
 
-                <NavLink to="/notification" className={(nav) => cx('right-icon', { active: nav.isActive })}>
+                <button className={cx('header-item-right-button')}>
                     <FontAwesomeIcon icon={faBell} />
-                </NavLink>
+                </button>
 
-                <NavLink to="/messages" className={(nav) => cx('right-icon', { active: nav.isActive })}>
+                <button className={cx('header-item-right-button')}>
                     <FontAwesomeIcon icon={faEnvelope} />
-                </NavLink>
+                </button>
 
                 <TippyHeadless
                     appendTo={document.body}
+                    trigger="click"
+                    interactive="true"
+                    offset={[-54, 0]}
+                    delay={[0, 0]}
                     render={(attrs) => (
                         <div className="box" tabIndex="-1" {...attrs}>
                             <PopperWrapper data={SETTING_MENU} />
                         </div>
                     )}
-                    trigger="click"
-                    interactive="true"
-                    offset={[-54, 0]}
-                    delay={[0, 0]}
                 >
                     <div to="/setting" className={cx('right-icon', 'size-medium', 'add-padding')}>
                         <FontAwesomeIcon icon={faEllipsis} />

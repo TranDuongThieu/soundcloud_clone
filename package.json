@@ -1,5 +1,5 @@
 {
-    "name": "tiktok",
+    "name": "sound_cloud",
     "version": "0.1.0",
     "private": true,
     "dependencies": {
@@ -17,11 +17,13 @@
         "classnames": "^2.3.2",
         "clsx": "^1.2.1",
         "css-reset-and-normalize": "^2.3.6",
+        "history": "^5.3.0",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
-        "react-router-dom": "^6.3.0",
+        "react-router-dom": "^6.6.0",
         "react-scripts": "5.0.1",
         "react-slick": "^0.29.0",
+        "react-toastify": "^9.1.1",
         "slick-carousel": "^1.8.1",
         "soundcloud-audio": "^1.4.0",
         "swiper": "^8.4.4",

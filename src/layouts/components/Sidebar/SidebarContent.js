@@ -2,8 +2,7 @@ import { faCalendar } from '@fortawesome/free-regular-svg-icons';
 import { faRotateRight } from '@fortawesome/free-solid-svg-icons';
 import { HeartIcon, UsersIcon2 } from '~/components/Icons/Icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Songs from '~/pages/Home/SongInfo';
-console.log();
+import LIBRARY_TRACKS from '~/components/Songs/LibraryTracks';
 export const SIDEBAR_MENU = [
     {
         title: {
@@ -18,7 +17,7 @@ export const SIDEBAR_MENU = [
     {
         title: {
             icon: <HeartIcon />,
-            content: '4 likes',
+            content: 'likes',
         },
         button: {
             content: 'View all',

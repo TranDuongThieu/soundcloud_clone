@@ -1,6 +1,27 @@
 .playlist-container {
-  margin-bottom: 30px;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
   width: 100%;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.toast {
+  display: flex;
+}
+
+.toast-img {
+  width: 30px;
+  height: 30px;
+  margin-right: 7px;
+}
+
+.toast-info {
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+}
+.toast-info .toast_song-name {
+  color: blue;
 }
 
 .playlist-header {
@@ -9,6 +30,7 @@
 
 .playlist-content {
   padding: 20px;
+  margin-bottom: 20px;
   display: flex;
 }
 .playlist-content img {
@@ -17,7 +39,11 @@
 }
 
 .background1 {
-  background: linear-gradient(135deg, rgb(132, 132, 100) 0%, rgb(64, 67, 45) 100%);
+  background: linear-gradient(135deg, rgb(85, 85, 85) 0%, rgb(31, 31, 31) 100%);
+}
+
+.background2 {
+  background: linear-gradient(135deg, rgb(134, 104, 70) 0%, rgb(67, 51, 35) 100%);
 }
 
 .playlist-track {
@@ -33,6 +59,16 @@
   border-bottom: 1px solid transparent;
   outline: 0;
 }
+.playlist-track:hover .playlist-info {
+  display: none;
+}
+.playlist-track:hover .playlist-icon {
+  display: flex;
+  align-items: center;
+}
+.playlist-track:hover .playlist-icon div {
+  display: flex;
+}
 .playlist-track span {
   font-size: 14px;
   font-weight: 100;
@@ -47,7 +83,73 @@
   height: 180px;
   overflow-y: auto;
 }
+.playlist-track_info::-webkit-scrollbar {
+  width: 7px;
+  height: 30px;
+}
+.playlist-track_info::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 7px;
+  background: rgba(0, 0, 0, 0.3);
+}
 
 .playlist-track_info-right svg {
   height: 12px;
+}
+
+.playlist-info span {
+  font-size: 12px;
+}
+
+.playlist-icon {
+  display: none;
+  align-items: center;
+}
+.playlist-icon svg {
+  width: 25px;
+  height: 25px;
+  padding: 0 4px;
+  border: 1px solid white;
+  border-radius: 2px;
+  margin-left: 5px;
+}
+
+.playlist-footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.playlist-footer-left {
+  display: flex;
+  align-items: center;
+}
+.playlist-footer-left img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: -8px;
+  border: 1px solid white;
+}
+.playlist-footer-left span {
+  font-size: 14px;
+  font-weight: 100;
+  color: #999;
+}
+
+.playlist-footer-left-img {
+  margin-right: 15px;
+}
+
+.playlist-footer-right button {
+  height: 26px;
+  padding: 2px 11px 2px 10px;
+  border: 1px solid #e5e5e5;
+  border-radius: 3px;
+  background-color: #fff;
+  cursor: pointer;
+}
+.playlist-footer-right button:hover {
+  color: #333;
+  outline: 0;
+  border-color: #ccc;
 }/*# sourceMappingURL=PlayListBanner.module.css.map */
