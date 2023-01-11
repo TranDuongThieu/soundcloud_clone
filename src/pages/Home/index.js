@@ -20,7 +20,6 @@ const ARTIST = [
     },
 ];
 function Home(handleSetSong) {
-    console.log(handleSetSong);
     window.scrollTo(0, 0);
     return (
         <div className={cx('container')}>
